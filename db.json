@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "value": "value",
+      "postId": "1",
+      "id": 2
+    },
+    {
+      "value": "value",
+      "postId": "1",
+      "id": 4
+    },
+    {
+      "value": "value",
+      "postId": "1",
+      "id": 5
+    },
+    {
+      "value": "value",
+      "postId": "1",
+      "id": 7
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
