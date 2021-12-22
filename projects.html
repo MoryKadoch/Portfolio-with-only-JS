@@ -31,32 +31,61 @@
             </div>
             <div class="col">
                 <div class="container mt-5">
+                    //il faut pouvoir ajouter plusieurs images / video du coup les inputs deviennent des textarea et on peut ajouter en metant des points vigules ensuite je split et je peux ajouter sur la page du projet ou le cv
                     <div id="modal" class="modal">
                         <div class="modal-window small">
                             <h3>Ajouter un projet</h3>
                             <div>
                                 <div class="form-group">
                                     <labe>Nom du projet</label>
-                                    <input type="text" class="form-control" id="name">
+                                        <input type="text" class="form-control" id="name">
                                 </div>
                                 <div class="form-group">
                                     <labe>Description du projet</label>
-                                    <textarea type="text" class="form-control" id="description"></textarea>
+                                        <textarea type="text" class="form-control" id="description"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <labe>Url</label>
-                                    <input type="text" class="form-control" id="url">
+                                        <input type="text" class="form-control" id="url">
                                 </div>
                                 <div class="form-group">
                                     <labe>Lien vers l'image / vidéo</label>
-                                    <input type="text" class="form-control" id="image">
+                                        <input type="text" class="form-control" id="image">
                                 </div>
                                 <button type="submit" class="btn btn-primary" id="addProjectBtn">Ajouter</button>
                             </div>
                         </div>
                     </div>
+                    <div id="modalEdit" class="modal">
+                        <div class="modal-window small">
+                            <h3>Modifier le projet</h3>
+                            <div>
+                                <div class="form-group">
+                                    <labe>ID</label>
+                                        <input type="text" class="form-control" id="idEdit" disabled>
+                                </div>
+                                <div class="form-group">
+                                    <labe>Nom du projet</label>
+                                        <input type="text" class="form-control" id="nameEdit">
+                                </div>
+                                <div class="form-group">
+                                    <labe>Description du projet</label>
+                                        <textarea type="text" class="form-control" id="descriptionEdit"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <labe>Url</label>
+                                        <input type="text" class="form-control" id="urlEdit">
+                                </div>
+                                <div class="form-group">
+                                    <labe>Lien vers l'image / vidéo</label>
+                                        <input type="text" class="form-control" id="imageEdit">
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="editProjectBtn">Valider les modifications</button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
-                        <div class="col"><button type="button" class="btn btn-dark m-3" onclick="generateTable();"><i
+                        <div class="col"><button type="button" class="btn btn-dark m-3" onclick="generateTable();showAlert('success', 'Les données sont à jour.');"><i
                                     class="fas fa-sync"></i></button></div>
                         <div class="col"><button type="button" class="btn btn-primary m-3 float-right"
                                 data-target="modal" data-toggle="modal">+ Ajouter un projet</button></div>

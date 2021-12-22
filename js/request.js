@@ -13,21 +13,28 @@ function addData(url, params) {
     showAlert("success", "L'ajout a bien été effectué !");
 }
 
-params = {
-    "id": getRandomInt(1000),
-    "name": "name",
-    "description": "descri",
-    "url": "https://mory.fr",
-    "image": "lien"
-};
-
 function deleteData(url) {
     fetch(url, {
-            method: 'DELETE',
-        })
+        method: 'DELETE',
+    })
         .then(res => res.text()) // or res.json()
         .then(res => console.log(res))
         .then(showAlert("success", "La supression a bien été effectuée !"));
+}
+
+function editData(url, params) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("PATCH", url);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+            showAlert("success", "La modification a bien été effectuée !");
+        }
+    };
+    xhr.send(JSON.stringify(params));
 }
 
 function getRandomInt(max) {
