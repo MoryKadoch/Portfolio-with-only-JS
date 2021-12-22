@@ -1,10 +1,50 @@
-*{
-    margin: 0%;
-    padding: 0%;
-    overflow-x: hidden;
-    text-decoration: none;
+* {
+  margin: 0%;
+  padding: 0%;
+  overflow-x: hidden;
+  text-decoration: none;
 }
 
-h1{
-    font-family: 'Poppins', sans-serif;
+html,
+body {
+  height: 100%;
+}
+
+footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  color: white;
+}
+
+h1 {
+  font-family: arial;
+}
+
+.openNavIcon {
+  background: #343a40;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+  padding: 16px;
+  color: white;
+}
+
+.openNavIconContainer {
+  display: block;
+}
+
+.closeNavIcon {
+  color: white;
+  padding: 16px;
+}
+
+#nav {
+  display: none;
+}
+
+.profilPic {
+  border-radius: 91px;
+  height: 155px;
 }
