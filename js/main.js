@@ -1,28 +1,34 @@
-loadFile('file:///home/mory/ipssi/nav.html');
-function httpGet(theUrl) {
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.open("GET", theUrl, false); // false for synchronous request
-  xmlHttp.send(null);
-  return xmlHttp.responseText;
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("include");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            elmnt.innerHTML = this.responseText;
+          }
+          if (this.status == 404) {
+            elmnt.innerHTML = "Page not found.";
+          }
+          /* Remove the attribute, and call this function once more: */
+          elmnt.replaceWith(...elmnt.childNodes);
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
 }
-
-console.log(httpGet('http://localhost:3000/comments'));
-
-//tranformer en fonction add
-var xhr = new XMLHttpRequest();
-xhr.open("POST", 'http://localhost:3000/posts/1/comments', true);
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.send(JSON.stringify({
-  value: 'value'
-}));
-
-
-//tranformer en fonction delete
-fetch('http://localhost:3000/comments/8', {
-    method: 'DELETE',
-  })
-  .then(res => res.text()) // or res.json()
-  .then(res => console.log(res))
 
 //function pour afficher ou masquer le menu
 function hideShow() {
@@ -36,18 +42,26 @@ function hideShow() {
   }
 }
 
-document.getElementsByClassName("closeNavIcon")[0].addEventListener('click', hideShow);
-document.getElementsByClassName("openNavIcon")[0].addEventListener('click', hideShow);
-
-
-function loadFile(filePath) {
-  var result = null;
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", filePath, false);
-  xmlhttp.send();
-  if (xmlhttp.status==200) {
-    result = xmlhttp.responseText;
-  }
-  return result;
+function addEvents() {
+  document.getElementsByClassName("closeNavIcon")[0].addEventListener('click', hideShow);
+  document.getElementsByClassName("openNavIcon")[0].addEventListener('click', hideShow);
 }
 
+window.onload = function () {
+  includeHTML();
+  setTimeout(function () {
+    addEvents();
+  }, 200);
+}
+
+//utiliser un switch
+function showAlert(type, message) {
+  if (type === "success") {
+    var alert = document.createElement("div");
+    alert.classList.add("alert", "alert-success");
+    alert.innerText = message;
+    document.getElementById('alert').appendChild(alert);
+  }
+  setTimeout(function() { alert.remove(); }, 3000);  
+     
+}

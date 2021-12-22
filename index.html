@@ -23,7 +23,7 @@
 
     <main class="h-100">
         <div class="row d-flex no-gutters h-100">
-            <div w3-include-html="file:///nav.html"></div> 
+            <div include="views/nav.html"></div>
             <div class="openNavIconContainer">
                 <i class="openNavIcon fas fa-bars float-left m-3 "></i>
             </div>
@@ -32,19 +32,26 @@
                     <img src="./img/mory-kadoch.jpg" class="profilPic mt-5">
                     <h1>Mory Kadoch</h1>
                     <p>BD 22.2</p>
-                </section>
+                    <a class="btn btn-primary btn-lg mt-3" href="cv.html">Voir le CV</a>
+                    <div class="container mt-5">
+                        <h2>Derniers projets</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-deck" id="projects"></div>
+                            </div>
+                        </div>
+                    </div>
             </div>
+            </section>
         </div>
-        <footer class="bg-dark text-center text-lg-start">
-            <!-- Copyright -->
-            <div class="text-center p-3">
-                <a class="text-white" href="https://github.com/MoryKadoch/" target="_blank">@MoryKadoch</a>
-            </div>
-            <!-- Copyright -->
-        </footer>
+        </div>
+        <div include="views/footer.html"></div>
     </main>
 
+    <script src="./js/request.js"></script>
+    <script src="./js/home.js"></script>
     <script src="./js/main.js"></script>
+
 </body>
 
 </html>

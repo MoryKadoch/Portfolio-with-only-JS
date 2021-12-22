@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./css/modal.css" rel="stylesheet">
+    <script src="./js/modal.js"></script>
+</head>
+
+<body>
+
+    <main class="h-100">
+        <div class="row d-flex no-gutters h-100">
+            <div include="views/nav.html"></div>
+            <div class="openNavIconContainer">
+                <i class="openNavIcon fas fa-bars float-left m-3 "></i>
+            </div>
+            <div class="col">
+                <div class="container mt-5">
+                    <div id="modal" class="modal">
+                        <div class="modal-window small">
+                            <h3>Ajouter un projet</h3>
+                            <div>
+                                <div class="form-group">
+                                    <labe>Nom du projet</label>
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+                                <div class="form-group">
+                                    <labe>Description du projet</label>
+                                    <textarea type="text" class="form-control" id="description"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <labe>Url</label>
+                                    <input type="text" class="form-control" id="url">
+                                </div>
+                                <div class="form-group">
+                                    <labe>Lien vers l'image / vidéo</label>
+                                    <input type="text" class="form-control" id="image">
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="addProjectBtn">Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><button type="button" class="btn btn-dark m-3" onclick="generateTable();"><i
+                                    class="fas fa-sync"></i></button></div>
+                        <div class="col"><button type="button" class="btn btn-primary m-3 float-right"
+                                data-target="modal" data-toggle="modal">+ Ajouter un projet</button></div>
+                    </div>
+                    <div id="alert"></div>
+                    <table class="table" id="projects">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">URL</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Action</th>
+                        <tbody></tbody>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div include="views/footer.html"></div>
+    </main>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/request.js"></script>
+    <script src="./js/projects.js"></script>
+</body>
+
+</html>
