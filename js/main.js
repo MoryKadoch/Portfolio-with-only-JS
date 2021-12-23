@@ -1,3 +1,4 @@
+//function récupérée d'internet pour include les éléments de type nav ou footer
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
@@ -32,7 +33,7 @@ function includeHTML() {
 
 //function pour afficher ou masquer le menu
 function hideShow() {
-  var nav = document.getElementById("nav");
+  let nav = document.getElementById("nav");
   if (nav.style.display === "none" || nav.style.display === "") {
     nav.style.display = "block";
     document.getElementsByClassName("openNavIconContainer")[0].style.display = "none";
@@ -42,11 +43,13 @@ function hideShow() {
   }
 }
 
+//ajout des evenements qui doivent être ajoutés en décalé pour executer le js sur les vues qui sont chargées avec la function includeHTML
 function addEvents() {
   document.getElementsByClassName("closeNavIcon")[0].addEventListener('click', hideShow);
   document.getElementsByClassName("openNavIcon")[0].addEventListener('click', hideShow);
 }
 
+//chargement des vues + ajout des evenements click
 window.onload = function () {
   includeHTML();
   setTimeout(function () {
@@ -54,14 +57,20 @@ window.onload = function () {
   }, 200);
 }
 
-//utiliser un switch
+//function pour gérer les alertes l'idée serait d'alimenter le switch pour gérer les autres erreurs danger, info, etc...
 function showAlert(type, message) {
-  if (type === "success") {
-    var alert = document.createElement("div");
-    alert.classList.add("alert", "alert-success");
-    alert.innerText = message;
-    document.getElementById('alert').appendChild(alert);
+  switch (type) {
+    case 'success':
+      var alert = document.createElement("div");
+      alert.classList.add("alert", "alert-success");
+      alert.innerText = message;
+      document.getElementById('alert').appendChild(alert);
+      break;
+    default:
+      console.log("Erreur inconnue");
   }
-  setTimeout(function() { alert.remove(); }, 3000);  
-     
+  //suppression de la notif au bout de 3 secondes
+  setTimeout(function () {
+    alert.remove();
+  }, 3000);
 }

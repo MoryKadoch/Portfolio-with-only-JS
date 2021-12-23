@@ -1,84 +1,52 @@
 {
   "projects": [
     {
-      "id": 601,
-      "name": "Test1",
-      "description": "description",
-      "url": "https://mory.fr",
-      "image": "hfgf;lien"
+      "id": 895,
+      "name": "Projet avec une image",
+      "description": "Description projet avec une image",
+      "url": "https://ecole-ipssi.com",
+      "image": "https://cdn.pixabay.com/photo/2020/03/05/17/07/montserrat-4904951_960_720.jpg"
     },
     {
-      "id": 460,
-      "name": "Titre du projetfdf",
-      "description": "Description",
-      "url": "www.ma-citation.com",
-      "image": "www.ma-citation.com/img"
+      "id": 305,
+      "name": "Projet 2 images",
+      "description": "Description 2 images",
+      "url": "https://ecole-ipssi.com",
+      "image": "https://cdn.pixabay.com/photo/2021/12/18/17/11/flower-6879399_960_720.jpg;https://cdn.pixabay.com/photo/2021/12/10/13/59/star-6860582_960_720.jpg"
     },
     {
-      "id": 580,
-      "name": "test",
-      "description": "trgdsfgfdsg",
-      "url": "https://google.lfrr",
-      "image": "https://www.png-gratuit.com/img/cercle-noir-fond-transparent.png"
+      "id": 386,
+      "name": "Projet avec 5 images",
+      "description": "Description projet avec 5 images",
+      "url": "https://ecole-ipssi.com",
+      "image": "https://cdn.pixabay.com/photo/2021/09/25/19/22/animal-6655641_960_720.jpg;https://cdn.pixabay.com/photo/2021/12/14/09/37/animal-6870176_960_720.jpg;https://cdn.pixabay.com/photo/2016/11/14/04/45/elephant-1822636_960_720.jpg;https://cdn.pixabay.com/photo/2016/03/27/22/22/fox-1284512_960_720.jpg;https://cdn.pixabay.com/photo/2013/11/01/11/13/dolphin-203875_960_720.jpg"
     },
     {
-      "id": 899,
-      "name": "ccccdsf",
-      "description": "sdfsd",
-      "url": "fsfs",
-      "image": "df"
+      "id": 965,
+      "name": "Projet avec 3 images",
+      "description": "Description projet avec 3 images",
+      "url": "https://ecole-ipssi.com",
+      "image": "https://cdn.pixabay.com/photo/2021/12/12/22/48/mountain-6867146_960_720.jpg;https://cdn.pixabay.com/photo/2016/12/19/18/21/snowflake-1918794_960_720.jpg;https://cdn.pixabay.com/photo/2021/12/01/10/31/christmas-balls-6837253_960_720.jpg"
     },
     {
-      "id": 362,
-      "name": "dsf",
-      "description": "sdfsd",
-      "url": "fsfs",
-      "image": "df"
-    },
-    {
-      "id": 195,
-      "name": "dsf",
-      "description": "sdfsd",
-      "url": "fsfs",
-      "image": "df"
-    },
-    {
-      "id": 789,
-      "name": "dsf",
-      "description": "sdfsd",
-      "url": "fsfs",
-      "image": "df"
-    },
-    {
-      "id": 52,
-      "name": "",
-      "description": "",
-      "url": "",
-      "image": "https://www.png-gratuit.com/img/cercle-noir-fond-transparent.png"
-    },
-    {
-      "id": 441,
-      "name": "",
-      "description": "",
-      "url": "",
-      "image": ""
-    },
-    {
-      "id": 818,
-      "name": "",
-      "description": "",
-      "url": "",
-      "image": ""
+      "id": 844,
+      "name": "Projet avec une image + vidéo YT",
+      "description": "Description projet avec une image + vidéo",
+      "url": "https://ecole-ipssi.com",
+      "image": "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg;https://www.youtube.com/watch?v=9TGlc0Fufgk"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
+  "cv": {
+    "photo": "./img/mory-kadoch.jpg",
+    "first_name": "Mory",
+    "last_name": "Kadoch",
+    "address": "5 rue du Pélican",
+    "phone": "0132537634",
+    "email": "moryykadoch@gmail.com",
+    "about": "Ceci est un texte explicatif qui n'explique rien du tout...",
+    "experiences": "Enterprise 1; Enterprise 2; Enterprise 3;",
+    "formations": "Formation 1; Formation 2; Formation 3;",
+    "skills": "PHP; Javascript; HTML/CSS",
+    "diplomas": "Bac - 2013; BTS - 2015; Bachelor - 2021; Master - 2022"
   }
 }

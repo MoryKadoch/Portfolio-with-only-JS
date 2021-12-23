@@ -10,7 +10,7 @@ body {
   height: 100%;
 }
 
-footer{
+footer {
   position: absolute;
   bottom: 0px;
   width: 100%;
@@ -42,9 +42,18 @@ h1 {
 
 #nav {
   display: none;
+  position: fixed;
+  left: 0px;
+  height: 100%;
+  top: 0px;
+  z-index: 1000;
 }
 
 .profilPic {
   border-radius: 91px;
   height: 155px;
+}
+
+.imgProject {
+  width: 200px;
 }
